@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SilkFlow Admin</title>
+</head>
+<body>
+
+<h2>SilkFlow Orders</h2>
+
+<a href="/">ALL</a> |
+<a href="/?status=NEW">NEW</a> |
+<a href="/?status=IN_PROGRESS">WORKING</a> |
+<a href="/?status=COMPLETED">DONE</a>
+
+<hr>
+
+{% for o in orders %}
+<div style="border:1px solid #ccc; margin:10px; padding:10px; border-radius:8px;">
+
+    <h3>Order #{{o[0]}}</h3>
+
+    <b>User ID:</b> {{o[1]}}<br>
+    <b>Amount:</b> {{o[2]}}<br>
+    <b>Exchange:</b> {{o[3]}}<br>
+    <b>Status:</b> {{o[4]}}<br>
+    <b>Created:</b> {{o[5]}}<br>
+
+    <br>
+
+    <a href="/order/{{o[0]}}">Open</a>
+
+</div>
+{% endfor %}
+
+</body>
+</html>
