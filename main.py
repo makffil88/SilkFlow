@@ -111,12 +111,7 @@ def main():
     app.add_handler(CallbackQueryHandler(callback))
 
     print("🚀 BOT v6 RUNNING")
-    app.run_webhook(
-    listen="0.0.0.0",
-    port=int(os.environ.get("PORT", 10000)),
-    url_path=BOT_TOKEN,
-    webhook_url=f"https://YOUR-RENDER-URL/{BOT_TOKEN}"
-)
+    app.run_polling()
 
 if __name__ == "__main__":
     main()
